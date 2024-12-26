@@ -85,26 +85,20 @@
     $word_1 = "aaaa";
     $word_2 = "abaa";
 
-    $word_array = str_split($word_1);
-    $reversed = array_reverse($word_array);
+    function word_judgment($text_1){
+        $word_array = str_split($text_1);
+        $reversed = array_reverse($word_array);
+        if($word_array == $reversed){
+            echo "回文です";
+        }else{
+            echo "回文ではありません";
+        }
+        echo "\n";
 
-    if($word_array == $reversed){
-        echo "回文です";
-    }else{
-        echo "回文ではありません";
     }
-    echo "\n";
 
-    $word_array = str_split($word_2);
-    $reversed = array_reverse($word_array);
-
-    if($word_array == $reversed){
-        echo "回文です";
-    }else{
-        echo "回文ではありません";
-    }
-    echo "\n";
-
+    word_judgment($word_1);
+    word_judgment($word_2);
 /*
     function Palindrome($str){
         if(strrev($str) == $str){
