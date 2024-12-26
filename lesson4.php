@@ -87,18 +87,31 @@
 
     function word_judgment($text_1){
         $word_array = str_split($text_1);
-        $reversed = array_reverse($word_array);
-        if($word_array == $reversed){
-            echo "回文です";
-        }else{
-            echo "回文ではありません";
+        $count = count($word_array);
+
+        for($i = 0, $j = $count -1 ;$i < $j; $i++, $j--){
+            if($word_array[$i] != $word_array[$j]){
+                return FALSE;
+            }
+
+            
         }
-        echo "\n";
+        return TRUE;
 
     }
 
-    word_judgment($word_1);
-    word_judgment($word_2);
+    if(word_judgment($word_1) == TRUE){
+        echo "回文です";
+    }else{
+        echo "回文ではありません";
+    }
+    echo "\n";
+    if(word_judgment($word_2) == TRUE){
+        echo "回文です";
+    }else{
+        echo "回文ではありません";
+    }
+    echo "\n";
 /*
     function Palindrome($str){
         if(strrev($str) == $str){
