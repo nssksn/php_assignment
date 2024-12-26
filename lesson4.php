@@ -65,20 +65,47 @@
             }
         }
     }
+
+    echo $A[4];
+    echo "\n";
+    /*
     for($i = 0; $i < 5; $i++){
         echo $A[4 - $i];
         echo "\n";
     }
+    */
 
     #5
     #特定の文字列が回文かどうかを判別するプログラムを作成してください
+    #組み込み関数strrevは無しで
     
     echo "第5問";
     echo "\n";
 
-    $word_1 = "abaa";
-    $word_2 = "aaaa";
+    $word_1 = "aaaa";
+    $word_2 = "abaa";
 
+    $word_array = str_split($word_1);
+    $reversed = array_reverse($word_array);
+
+    if($word_array == $reversed){
+        echo "回文です";
+    }else{
+        echo "回文ではありません";
+    }
+    echo "\n";
+
+    $word_array = str_split($word_2);
+    $reversed = array_reverse($word_array);
+
+    if($word_array == $reversed){
+        echo "回文です";
+    }else{
+        echo "回文ではありません";
+    }
+    echo "\n";
+
+/*
     function Palindrome($str){
         if(strrev($str) == $str){
             return true;
@@ -101,4 +128,5 @@
         echo "回文ではありません";
     }
     echo "\n";
+    */
 ?>
